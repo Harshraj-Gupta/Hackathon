@@ -1,96 +1,10 @@
-// import React, { useState } from 'react';
-// import { Mail, Lock, LogIn } from 'lucide-react';
-// import { Link } from 'react-router';
-// function Login() {
-//   const [formData, setFormData] = useState({
-//     email: '',
-//     password: ''
-//   });
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     console.log(formData);
-//   };
-
-//   const handleChange = (e) => {
-//     setFormData({
-//       ...formData,
-//       [e.target.name]: e.target.value
-//     });
-//   };
-
-//   return (
-//     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
-//       <div className="w-full max-w-md">
-//         <div className="bg-white p-8 rounded-xl shadow-lg">
-//           <h1 className="text-2xl font-bold text-blue-800 mb-6 flex items-center gap-2">
-//             <LogIn className="w-8 h-8" />
-//             Login to your account
-//           </h1>
-          
-//           <form onSubmit={handleSubmit} className="space-y-4">
-//             <div className="space-y-2">
-//               <label className="flex items-center gap-2 text-blue-800 font-medium">
-//                 <Mail className="w-5 h-5" />
-//                 Email Address
-//               </label>
-//               <input
-//                 type="email"
-//                 name="email"
-//                 value={formData.email}
-//                 onChange={handleChange}
-//                 className="w-full p-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-200 transition-all"
-//                 placeholder="john@example.com"
-//                 required
-//               />
-//             </div>
-
-//             <div className="space-y-2">
-//               <label className="flex items-center gap-2 text-blue-800 font-medium">
-//                 <Lock className="w-5 h-5" />
-//                 Password
-//               </label>
-//               <input
-//                 type="password"
-//                 name="password"
-//                 value={formData.password}
-//                 onChange={handleChange}
-//                 className="w-full p-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-200 transition-all"
-//                 placeholder="••••••••"
-//                 required
-//               />
-//               <div className="flex justify-end">
-//                 <a href="#" className="text-sm text-blue-600 hover:text-blue-800 transition-colors">
-//                   Forgot Password?
-//                 </a>
-//               </div>
-//             </div>
-
-//             <button
-//               type="submit"
-//               className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center gap-2"
-//             >
-//               <LogIn className="w-5 h-5" />
-//               Login
-//             </button>
-
-//             <div className="text-center text-gray-600">
-//               Don't have an account?{' '}
-//               <Link to='/Signup' className="text-blue-600 hover:text-blue-800 transition-colors font-medium">
-//                 Sign up
-//               </Link>
-//             </div>
-//           </form>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Login;
 import React, { useState } from "react";
 import { Mail, Lock, LogIn, GraduationCap, Users } from "lucide-react";
 import { Link } from "react-router-dom";
+
+import axios from 'axios';
+
+const API_URL ='http://localhost:3050'
 
 export default function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -99,10 +13,19 @@ export default function Login() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log("Logging in as Student:", formData);
-  };
+
+try {
+  const response = await axios.post(`${API_URL}/api/auth/signIn`, formData, {withCredentials: true});
+  alert(response.data.message);
+  if (response.data.success) {
+    window.location.href = response.data.redirectUrl;  // Redirect based on backend response
+}
+} catch (e) {
+  console.error("Sigin failed", error.response?.data || error);
+      alert(error.response?.data?.message || "sign in failed. Try again.");
+}};
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">

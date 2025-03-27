@@ -3,6 +3,12 @@ import {Link} from 'react-router'
 import { useState } from 'react'
 import { UserPlus, User, Mail,GraduationCap, Briefcase, Building2, Code, Lock, Calendar } from 'lucide-react'
 
+import axios from "axios";
+
+//  api url 
+
+const API_URL ='http://localhost:3050'
+
 export default function MentorSignup() {
     const [formData, setFormData] = useState({
       fullname: '',
@@ -45,17 +51,24 @@ export default function MentorSignup() {
     "Cybersecurity"
   ]
 
-  const handlesubmit = async(e) =>{
-      e.preventDefault();
-    //   const response = await fetch("http://localhost:3050/api/auth/mentor/signUp", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(formData),
-    // });
-    // const data = await response.json();
-    // alert(data.message || "Signup Successful!");
-  console.log(formData);
-  }
+  const handlesubmit = async (e) => {
+    e.preventDefault();
+    
+    const response = await fetch("http://localhost:3050/api/auth/mentor/signUp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+    });
+    const data = await response.json();
+    if (response.ok) {
+        alert(data.message || "Signup Successful!");
+        window.location.href = "/MentorLogin"; // Redirect to dashboard or login
+    } else {
+        alert(data.message || "Signup Failed!");
+    }
+    console.log(formData);
+};
+
   
   return (
     <>

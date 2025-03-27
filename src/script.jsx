@@ -11,6 +11,8 @@ import Aboutus from './pages/Aboutus';
 import SelectRoadmap from './pages/SelectRoadmap';
 import LoginSection from './pages/LoginSection';
 import MentorSignup from './pages/MentorSignup';
+import MentorLogin from './pages/MentorLogin';
+import MentorDashboard from './pages/MentorDashboard'
 export default function App() {
   return (
 
@@ -27,7 +29,8 @@ export default function App() {
         <Route path='/ExploreCourses' element={<SelectRoadmap></SelectRoadmap>}></Route>
         <Route path='/Signup' element={<Signup></Signup>}></Route>
         <Route path='/MentorSignup' element={<MentorSignup></MentorSignup>}></Route>
-
+        <Route path='/MentorLogin' element={<MentorLogin></MentorLogin>}></Route>
+        <Route path='/MentorDashboard' element={<MentorDashboard></MentorDashboard>}></Route>
       </Routes>
     </BrowserRouter>
   )

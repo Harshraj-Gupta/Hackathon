@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { User, Mail, Lock, BookOpen, Calendar, ChevronDown, GraduationCap } from 'lucide-react';
-
+import axios from "axios";
+const API_URL ='http://localhost:3050'
 function Signup() {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -23,16 +24,31 @@ function Signup() {
 
   const semesters = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th'];
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log(formData);
-  };
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    try {
+      const response = await axios.post(`${API_URL}/api/auth/signUp`, formData,
+        {
+          withCredentials: true,
+        }
+      );
+      alert(response.data.message);
+      if (response.data.success) {
+        window.location.href = response.data.redirectUrl;  // Redirect based on backend response
+    }
+    } catch (error) {
+      console.error("Signup failed", error.response?.data || error);
+      alert(error.response?.data?.message || "Registration failed. Try again.");
+    }
+  }    
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
