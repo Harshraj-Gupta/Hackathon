@@ -6,6 +6,18 @@ function SelectRoadmap() {
   const [selectedSkillCourses, setSelectedSkillCourses] = useState([]);
   const [isHidden, setIsHidden] = useState(true);
   const [selectedCourse, setSelectedCourse] = useState(null);
+const handleEnroll = () => {
+  // Get full details of selected role-based courses
+  const selectedRoleCourseDetails = roleCourses.filter(course => selectedRoleCourses.includes(course.id));
+
+  // Get full details of selected skill-based courses
+  const selectedSkillCourseDetails = skillCourses.filter(course => selectedSkillCourses.includes(course.id));
+
+  console.log("Final Selected Role Courses:", selectedRoleCourseDetails);
+  console.log("Final Selected Skill Courses:", selectedSkillCourseDetails);
+};
+
+
 
 
 const roleCourses = [
@@ -154,7 +166,7 @@ const skillCourses = [
                 </div>
               ))}
             </div>
-            <button className='bg-blue-600 text-white rounded-md py-3 px-10 font-medium mt-10 cursor-pointer block mx-auto'>Enroll Now</button>
+            <button className='bg-blue-600 text-white rounded-md py-3 px-10 font-medium mt-10 cursor-pointer block mx-auto' onClick={handleEnroll}>Enroll Now</button>
           </section>
         </div>
       </div>
