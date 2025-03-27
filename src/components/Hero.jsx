@@ -15,7 +15,7 @@ export default function Hero() {
                 <div className="absolute bottom-20 left-1/4 w-20 h-20 bg-yellow-500 rounded-full opacity-10 animate-pulse delay-1000"></div>
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="relative pt-16 pb-20 md:pt-24 md:pb-28 lg:pt-28 lg:pb-32 flex flex-col-reverse md:flex-row items-center">
+                    <div className="relative pt-16 pb-20 md:pt-24 md:pb-28 lg:pt-18 lg:pb-32 flex flex-col-reverse md:flex-row items-center">
                         {/* Text content */}
                         <div className="md:w-1/2 md:pr-8 z-10">
                             <div className="inline-block px-4 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-6">
@@ -32,9 +32,9 @@ export default function Hero() {
                                 <Link to='/Signup' className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold rounded-lg shadow-lg transform transition duration-300 hover:scale-105 flex items-center justify-center">
                                     Start Learning Now <span className="ml-2">🚀</span>
                                 </Link>
-                                <button className="px-8 py-4 bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-bold rounded-lg shadow-md transform transition duration-300 hover:scale-105 flex items-center justify-center">
+                                <Link to='https://www.w3schools.com/' className="px-8 py-4 bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-bold rounded-lg shadow-md transform transition duration-300 hover:scale-105 flex items-center justify-center">
                                     Explore Resources <span className="ml-2">📚</span>
-                                </button>
+                                </Link>
                             </div>
 
                             {/* Trust indicators */}
@@ -50,7 +50,7 @@ export default function Hero() {
                                 </div>
                                 <div className="h-10 w-px bg-gray-300"></div>
                                 <div className="flex flex-col items-center">
-                                    <span className="text-2xl font-bold text-yellow-500">10k+</span>
+                                    <span className="text-2xl font-bold text-yellow-500">1k+</span>
                                     <span className="text-sm text-gray-500">Students</span>
                                 </div>
                             </div>
