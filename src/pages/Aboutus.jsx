@@ -95,32 +95,11 @@ export default function Aboutus() {
         </div>
       </div>
 
-      {/* Team Section */}
+     {/* Team Section */}
       <div className="bg-white py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Meet Our Team</h2>
           <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {/* Team Member 1 */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all">
-              <div className="aspect-square overflow-hidden">
-                <img 
-                  src={Anand} 
-                  alt="Anand Chaurasiya"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Anand Chaurasiya</h3>
-                <p className="text-[#1742D2] font-medium mb-3">Frontend Lead</p>
-                <p className="text-gray-600 mb-4">Passionate about creating intuitive user experiences and beautiful interfaces.</p>
-                <div className="flex gap-4 text-gray-600">
-                  <a href="#" className="hover:text-[#1742D2] transition-colors"><Github className="w-5 h-5" /></a>
-                  <a href="#" className="hover:text-[#1742D2] transition-colors"><Linkedin className="w-5 h-5" /></a>
-                  <a href="#" className="hover:text-[#1742D2] transition-colors"><Twitter className="w-5 h-5" /></a>
-                </div>
-              </div>
-            </div>
-
             {/* Team Member 2 */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all">
               <div className="aspect-square overflow-hidden">
@@ -133,7 +112,7 @@ export default function Aboutus() {
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Anshu Singh</h3>
                 <p className="text-[#1742D2] font-medium mb-3">Team Leader</p>
-                <p className="text-gray-600 mb-4">Expert in building scalable systems and optimizing performance.</p>
+                <p className="text-gray-600 mb-4">Leads presentation, communicates ideas, and represents the project vision.</p>
                 <div className="flex gap-4 text-gray-600">
                   <a href="#" className="hover:text-[#1742D2] transition-colors"><Github className="w-5 h-5" /></a>
                   <a href="#" className="hover:text-[#1742D2] transition-colors"><Linkedin className="w-5 h-5" /></a>
@@ -141,7 +120,6 @@ export default function Aboutus() {
                 </div>
               </div>
             </div>
-
             {/* Team Member 3 */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all">
               <div className="aspect-square overflow-hidden">
@@ -154,7 +132,7 @@ export default function Aboutus() {
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Sumit Singh</h3>
                 <p className="text-[#1742D2] font-medium mb-3">Backend Engineer</p>
-                <p className="text-gray-600 mb-4">Creates engaging learning paths and educational content.</p>
+                <p className="text-gray-600 mb-4">Expert in building scalable systems and optimizing performance.</p>
                 <div className="flex gap-4 text-gray-600">
                   <a href="#" className="hover:text-[#1742D2] transition-colors"><Github className="w-5 h-5" /></a>
                   <a href="#" className="hover:text-[#1742D2] transition-colors"><Linkedin className="w-5 h-5" /></a>
@@ -162,6 +140,28 @@ export default function Aboutus() {
                 </div>
               </div>
             </div>
+            {/* Team Member 1 */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all">
+              <div className="aspect-square overflow-hidden">
+                <img 
+                  src={Anand} 
+                  alt="Anand Chaurasiya"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Anand Chaurasiya</h3>
+                <p className="text-[#1742D2] font-medium mb-3">AI Chatbot & Messaging Integration Lead</p>
+                <p className="text-gray-600 mb-4">AI chatbot & messaging for mentor-student interaction.</p>
+                <div className="flex gap-4 text-gray-600">
+                  <a href="#" className="hover:text-[#1742D2] transition-colors"><Github className="w-5 h-5" /></a>
+                  <a href="#" className="hover:text-[#1742D2] transition-colors"><Linkedin className="w-5 h-5" /></a>
+                  <a href="#" className="hover:text-[#1742D2] transition-colors"><Twitter className="w-5 h-5" /></a>
+                </div>
+              </div>
+            </div>
+
+
 
             {/* Team Member 4 */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all">
@@ -174,8 +174,8 @@ export default function Aboutus() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Harshraj Gupta</h3>
-                <p className="text-[#1742D2] font-medium mb-3">UX Researcher</p>
-                <p className="text-gray-600 mb-4">Focuses on understanding student needs and improving user experience.</p>
+                <p className="text-[#1742D2] font-medium mb-3">Frontend Lead</p>
+                <p className="text-gray-600 mb-4">Develops and optimizes user interface for seamless user experience.</p>
                 <div className="flex gap-4 text-gray-600">
                   <a href="#" className="hover:text-[#1742D2] transition-colors"><Github className="w-5 h-5" /></a>
                   <a href="#" className="hover:text-[#1742D2] transition-colors"><Linkedin className="w-5 h-5" /></a>

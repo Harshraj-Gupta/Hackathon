@@ -1,7 +1,37 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { Bot, X,ArrowLeft } from 'lucide-react';
+
 import { Link } from 'react-router'
 export default function Hero() {
+    const [showChatbot, setShowChatbot] = useState(true);
+
     return (
+        <>
+           {/* Sticky Chatbot Link */}
+           {showChatbot ? (
+        <div className="fixed right-4 top-1/5 transform -translate-y-1/2 z-50 bg-white rounded-lg shadow-lg">
+          <button 
+            onClick={() => setShowChatbot(false)}
+            className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1 hover:bg-red-600 transition-colors"
+          >
+            <X className="w-4 h-4" />
+          </button>
+          <a
+            href="/AIChatbot"
+            className="flex items-center justify-center text-blue-600 py-2 px-4 gap-2 border-2 hover:bg-blue-50 transition-colors rounded-md"
+          >
+            <Bot className="w-6 h-6 text-[#1742D2]" /> 
+            <span>AI Chatbot</span>
+          </a>
+        </div>
+      ) : (
+        <button
+          onClick={() => setShowChatbot(true)}
+          className="fixed right-0 top-1/5 transform -translate-y-1/2 z-50 bg-blue-600 text-white p-2 rounded-l-lg shadow-lg hover:bg-blue-700 transition-colors"
+        >
+          <ArrowLeft className="w-6 h-6" />
+        </button>
+      )}
         <section className='w-full flex'>
             <div className="relative overflow-hidden bg-gradient-to-r from-blue-50 via-white to-yellow-50 w-full">
                 {/* Abstract tech pattern background */}
@@ -99,5 +129,7 @@ export default function Hero() {
                 </div>
             </div>
         </section>
+        </>
+
     )
 }

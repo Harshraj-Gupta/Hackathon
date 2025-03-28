@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import axios from "axios";
 import logo from "../public/images/L1.png"; // ✅ Ensure the logo path is correct
 
@@ -53,12 +53,14 @@ export default function Header() {
     <header className="font-system-ui w-full h-22 shadow-md bg-white">
       <nav className="flex w-full h-full">
         <div className="flex h-full justify-around w-full">
-          <img src={logo} alt="Logo" className="w-50 h-16 my-auto" />
+        <Link className='flex' to='/Home'>
+                        <img src={logo} alt="" className='w-50 h-16 my-auto' />
+                    </Link>
 
           <div className="flex gap-20 my-auto text-[#0D2431] text-xl font-medium">
             <Link to="/Home">Home</Link>
             <Link to="/Roadmap">Roadmap</Link>
-            <Link to="/About">About</Link>
+            <Link to="/Aboutus">About Us</Link>
             <Link to="/Resources">Resources</Link>
           </div>
 
