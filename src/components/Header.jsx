@@ -79,7 +79,7 @@ export default function Header() {
                   <Link
                     to="/MentorDashboard"
                     className="text-orange-600 border-2 bg-white px-6 rounded-md py-2 hover:cursor-pointer"
-                  >
+                  > 
                     Mentor Dashboard
                   </Link>
                 ) : null}
