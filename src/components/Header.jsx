@@ -70,14 +70,14 @@ export default function Header() {
                 {/* ✅ If user is authenticated, show Dashboard button */}
                 {user?.role === "student" ? (
                   <Link
-                    to="/student-dashboard"
+                    to="/Userdashboard"
                     className="text-green-600 border-2 bg-white px-6 rounded-md py-2 hover:cursor-pointer"
                   >
                     Student Dashboard
                   </Link>
                 ) : user?.role === "mentor" ? (
                   <Link
-                    to="/mentor-dashboard"
+                    to="/MentorDashboard"
                     className="text-orange-600 border-2 bg-white px-6 rounded-md py-2 hover:cursor-pointer"
                   >
                     Mentor Dashboard
